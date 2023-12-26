@@ -1,0 +1,27 @@
+#Environment name
+env: sit
+
+#Deployment values
+deployment:
+  replicas: 1
+
+#Workload identity enablement for the GCP API access
+workloadIdentity:
+  enabled: true
+  gsa_name: <google_service_account_name>
+  gcp_project_id: <google_cloud_project_id>
+
+#Horizontal Pod autoscaling options
+autoscaling:
+  enabled: true
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+#Ingress values
+ingress:
+  enabled: true
+  domain: <domain_value>
+
+envVars:
+  SPRING_PROFILES_ACTIVE: "kubernetes"

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.amazonaws.eclipse.cloudformation.feature:1.0.0.v201807201743"/>
+		<item value="com.amazonaws.eclipse.rds.feature:1.0.0.v201807201743"/>
+		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
+		<item value="org.eclipse.buildship:3.1.4.v20200326-1743"/>
+		<item value="org.eclipse.datatools.connectivity.feature:1.14.102.201911250848"/>
+		<item value="org.eclipse.datatools.modelbase.feature:1.14.102.201911250848"/>
+		<item value="org.eclipse.egit.gitflow.feature:5.9.0.202009080501-r"/>
+		<item value="org.eclipse.egit:5.9.0.202009080501-r"/>
+		<item value="org.eclipse.emf.codegen.ecore.ui:2.33.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.codegen.ecore:2.33.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.codegen.ui:2.25.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.codegen:2.24.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.common.ui:2.20.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.common:2.29.0.v20230223-0922"/>
+		<item value="org.eclipse.emf.converter:2.19.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.databinding.edit:1.10.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.databinding:1.10.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.ecore.edit:2.16.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.ecore.editor:2.19.0.v20230224-1122"/>
+		<item value="org.eclipse.emf.ecore:2.31.0.v20230226-0921"/>
+		<item value="org.eclipse.emf.edit.ui:2.25.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.edit:2.19.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.mapping.ecore.editor:2.16.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.mapping.ecore:2.14.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.mapping.ui:2.15.0.v20230211-1150"/>
+		<item value="org.eclipse.emf.mapping:2.15.0.v20230211-1150"/>
+		<item value="org.eclipse.emf:2.33.0.v20230226-0921"/>
+		<item value="org.eclipse.epp.mpc:1.8.4.v20200709-0857"/>
+		<item value="org.eclipse.help:2.3.300.v20200902-1800"/>
+		<item value="org.eclipse.jdt:3.18.500.v20200902-1800"/>
+		<item value="org.eclipse.jgit.gpg.bc:5.9.0.202009080501-r"/>
+		<item value="org.eclipse.jgit.http.apache:5.9.0.202009080501-r"/>
+		<item value="org.eclipse.jgit.lfs:5.9.0.202009080501-r"/>
+		<item value="org.eclipse.jgit.ssh.apache:5.9.0.202009080501-r"/>
+		<item value="org.eclipse.jgit.ssh.jsch:5.9.0.202009080501-r"/>
+		<item value="org.eclipse.jgit:5.9.0.202009080501-r"/>
+		<item value="org.eclipse.jst.common.fproj.enablement.jdt:3.24.0.v202111201707"/>
+		<item value="org.eclipse.jst.enterprise_ui.feature:3.19.0.v202007100056"/>
+		<item value="org.eclipse.justj.openjdk.hotspot.jre.full:15.0.0.v20201014-1246"/>
+		<item value="org.eclipse.m2e.feature:1.16.2.20200910-0936"/>
+		<item value="org.eclipse.m2e.logback.feature:1.16.0.20200318-1040"/>
+		<item value="org.eclipse.m2e.wtp.feature:1.4.4.20200220-1005"/>
+		<item value="org.eclipse.m2e.wtp.jaxrs.feature:1.4.4.20200220-1005"/>
+		<item value="org.eclipse.m2e.wtp.jsf.feature:1.4.4.20200220-1005"/>
+		<item value="org.eclipse.mylyn.wikitext.editors_feature:3.0.38.202008172112"/>
+		<item value="org.eclipse.pde:3.14.500.v20200902-1800"/>
+		<item value="org.eclipse.platform:4.17.0.v20200902-1800"/>
+		<item value="org.eclipse.rcp:4.17.0.v20200902-1800"/>
+		<item value="org.eclipse.tm.terminal.connector.ssh.feature:10.0.0.202008310315"/>
+		<item value="org.eclipse.tm.terminal.control.feature:10.0.0.202009071350"/>
+		<item value="org.eclipse.tm.terminal.feature:10.0.0.202008310002"/>
+		<item value="org.eclipse.tm.terminal.view.feature:10.0.0.202008310315"/>
+		<item value="org.eclipse.userstorage:1.2.0.v20191120-1614"/>
+		<item value="org.eclipse.wst.common.fproj:3.7.3.v202111212041"/>
+		<item value="org.eclipse.wst.json_ui.feature:1.1.8.v202004230532"/>
+		<item value="org.eclipse.wst.web_ui.feature:3.19.0.v202008242027"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.19.0.v202008192217"/>
+		<item value="org.eclipse.xtext.xbase.lib:2.30.0.v20230227-1114"/>
+		<item value="org.jboss.tools.m2e.wro4j.feature:1.1.0.201406251020"/>
+		<item value="org.jboss.tools.maven.apt.feature:1.5.2.201812241535"/>
+		<item value="org.python.pydev.feature:10.2.1.202307021217"/>
+		<item value="org.sonatype.m2e.buildhelper.feature:0.15.0.201207090124"/>
+		<item value="org.sonatype.m2e.egit.feature:0.15.1.201806191431"/>
+		<item value="org.sonatype.m2e.mavenarchiver.feature:0.17.5.202002191804"/>
+	</list>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="380"/>
+		<item key="DIALOG_Y_ORIGIN" value="185"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/payments-notification-service/src/main/java/com/ecomm/payments/model/NotificationRequestItem.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/payments-data-writer/src/main/java/com/ecomm/payments/model/ModificationAuditLogDTO.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/payments-giftcard-service/src/main/java/com/ecomm/payments/service/AdyenGiftcardService.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/payments-giftcard-service/src/main/java/com/ecomm/payments/model/facade/GiftcardRequest.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/payments-giftcard-service/src/main/java/com/ecomm/payments/config/PrincipalAuthenticationToken.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/spring-boot-otp/src/main/java/com/starter/springboot/security/jwt/TokenProvider.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/spring-boot-otp/src/main/java/com/starter/springboot/rest/dto/LoginDTO.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/spring-boot-otp/src/main/java/com/starter/springboot/rest/dto/VerifyTokenRequestDTO.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<item key="ShowDerived" value="false"/>
+		<item key="FilterByLocation" value="false"/>
+		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="391"/>
+			<item key="DIALOG_Y_ORIGIN" value="39"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\naren\git\spring-boot-otp"/>
+		</list>
+	</section>
+</section>

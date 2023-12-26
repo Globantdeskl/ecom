@@ -1,0 +1,39 @@
+package com.app;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class FirstNonRepeated {
+	public static void main(String args[]) {
+
+		String input = "Java articles are Awesome";
+		String st = Stream.of(input.split("")).distinct().collect(Collectors.joining(""));
+		char p = st.charAt((st.length()-1)/2);
+		System.out.println(p);
+		
+		List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);
+
+        myList.stream()
+              .sorted()
+              .forEach(System.out::println);
+        
+
+        myList.stream()
+              .sorted(Collections.reverseOrder())
+              .forEach(System.out::println);
+		
+        
+
+        myList.stream()
+              .sorted(Collections.reverseOrder())
+              .forEach(System.out::println);
+        
+        
+		
+	}
+}
+
+//Jav rticlesAwom

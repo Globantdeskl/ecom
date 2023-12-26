@@ -1,0 +1,12 @@
+package com.app;
+
+public class ReversetheString {
+
+	public static void main(String[] args) {
+
+		String ss = "Narendar";
+		
+		
+	}
+
+}

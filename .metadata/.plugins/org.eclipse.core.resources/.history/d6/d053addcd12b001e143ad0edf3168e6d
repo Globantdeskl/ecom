@@ -1,0 +1,23 @@
+package com.app;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class DuplicateElements {
+	public static void main(String args[]) {
+		List<Integer> myList = Arrays.asList(10, 15, 8, 49, 25, 98, 98, 32, 15);
+		Set<Integer> set = new HashSet<>();
+//		myList.stream().filter(n -> !set.add(n)).forEach(System.out::println);
+
+		List<Integer> lh = (List<Integer>) myList.stream().filter(n -> !set.add(n));
+		
+		System.out.println(lh.size());
+		
+		
+		
+		int max = myList.stream().max(Integer::compare).get();
+		System.out.println(max);
+	}
+}

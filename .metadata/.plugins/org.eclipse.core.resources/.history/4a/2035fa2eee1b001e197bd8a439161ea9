@@ -1,0 +1,102 @@
+package com.app;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeSet;
+
+public class Test {
+
+	/**
+	 * Input: array[]= {5, 10, 20, 15} Output: 20 Explanation: The element 20 has
+	 * neighbors 10 and 15, both of them are less than 20.
+	 */
+
+	static int findPeak(int arr[], int n) {
+		// First or last element is peak element
+		if (n == 1)
+			return 0;
+		if (arr[0] >= arr[1])
+			return 0;
+		if (arr[n - 1] >= arr[n - 2])
+			return n - 1;
+		// Check for every other element
+		for (int i = 1; i < n - 1; i++) {
+			// Check if the neighbors are smaller
+			if (arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1])
+				return i;
+		}
+		return 0;
+	}
+
+	// Function to return K'th smallest
+	// element in a given array
+	public static int kthSmallest(Integer[] arr, int K) {
+		// Sort the given array
+		Arrays.sort(arr);
+
+		// Return K'th element in
+		// the sorted array
+		return arr[K - 1];
+	}
+
+	public static List<Integer> findSubarrayWithGivenSum(List<Integer> arr, int sum) {
+		Map<Integer, Integer> map = new HashMap<>();
+		List<Integer> subarray = new ArrayList<>();
+		int currSum = 0;
+		for (int i = 0; i < arr.size(); i++) {
+			currSum += arr.get(i);
+			if (map.containsKey(currSum - sum)) {
+				subarray = arr.subList(map.get(currSum - sum) + 1, i + 1);
+				break;
+			}
+			map.put(currSum, i);
+		}
+		return subarray;
+	}
+
+	public static ArrayList<Integer> Unionarray(int arr1[], int arr2[], int n, int m) {
+		TreeSet<Integer> set = new TreeSet<>();
+
+		// Remove the duplicates from arr1[]
+		for (int i : arr1)
+			set.add(i);
+
+		// Remove duplicates from arr2[]
+		for (int i : arr2)
+			set.add(i);
+
+		// Loading set to array list
+		ArrayList<Integer> list = new ArrayList<>();
+		for (int i : set)
+			list.add(i);
+
+		return list;
+	}
+
+	// Mover negative no in one side
+	 public static void move(int[] arr)
+	    {
+	        Arrays.sort(arr);
+	    }
+	
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 3, 20, 4, 1, 0 };
+		int n = arr.length;
+		System.out.print("Index of a peak point is " + findPeak(arr, n));
+
+		Integer arrr[] = new Integer[] { 12, 3, 5, 7, 19 };
+		int K = 2;
+
+		// Function call
+		System.out.print("K'th smallest element is " + kthSmallest(arrr, K));
+		
+		//
+		System.out.print("K'th smallest element is " + move(arrd));
+
+	}
+
+}

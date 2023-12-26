@@ -1,0 +1,32 @@
+package com.app.java;
+
+import java.util.stream.Stream;
+
+class StreamFilterExample {
+	public static void main(String[] args) {
+		// create a stream of strings
+		Stream<String> myStream = Stream.of("Like", "and", "Share", "https://www.geeksforgeeks.org/");
+
+		// only string starting with "http://" will be
+		// considered for next API(forEach)
+		myStream.filter(x -> x.startsWith("https://")).forEach(System.out::println);
+		
+		///////////////////////////
+		
+		
+		// Converting String array to stream
+        String[] arr = { "Geeks", "for", "Geeks" };
+  
+        // Using Arrays.stream to convert an
+        // array into Stream
+        Stream<String> stm = Arrays.stream(arr);
+  
+        // Displaying elements in Stream
+        stm.forEach(str -> System.out.print(str + " "));
+		
+		
+		
+		
+		
+	}
+}

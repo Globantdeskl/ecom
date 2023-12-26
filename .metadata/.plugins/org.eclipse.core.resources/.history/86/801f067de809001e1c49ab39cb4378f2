@@ -1,0 +1,92 @@
+package com.ecomm.payments.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.gcp.autoconfigure.sql.CloudSqlJdbcInfoProvider;
+import org.springframework.cloud.gcp.autoconfigure.sql.DatabaseType;
+import org.springframework.cloud.gcp.autoconfigure.sql.DefaultCloudSqlJdbcInfoProvider;
+import org.springframework.cloud.gcp.autoconfigure.sql.GcpCloudSqlAutoConfiguration;
+import org.springframework.cloud.gcp.autoconfigure.sql.GcpCloudSqlProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.util.StringUtils;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@ConditionalOnProperty(name = "spring.cloud.gcp.sql.enabled", havingValue = "true", matchIfMissing = true)
+@EnableConfigurationProperties(GcpCloudSqlProperties.class)
+@AutoConfigureBefore({DataSourceAutoConfiguration.class, GcpCloudSqlAutoConfiguration.class})
+@Configuration
+public class DataSourceURLFix {
+
+	private static final String URL_PARAM_USER = "&user=";
+	private static final String URL_PARAM_PASS = "&password=";
+
+	private CloudSqlJdbcInfoProvider customProvider;
+
+	public DataSourceURLFix(@Value("${spring.cloud.gcp.sql.host}") String host,
+			@Value("${spring.datasource.username}") String userName,
+			@Value("${spring.datasource.password}") String password,
+			GcpCloudSqlProperties gcpCloudSqlProperties) {
+		this.customProvider = new CustomCloudSqlJdbcInfoProvider(
+				gcpCloudSqlProperties, DatabaseType.POSTGRESQL, host, userName, password);
+	}
+
+	@Bean
+	public CloudSqlJdbcInfoProvider defaultPostgreSqlJdbcInfoProvider() {
+
+		String jdbcUrl = this.customProvider.getJdbcUrl();
+		boolean hasPswd = StringUtils.hasText(jdbcUrl) 
+				&& jdbcUrl.contains(URL_PARAM_USER) 
+				&& jdbcUrl.contains(URL_PARAM_PASS);
+		StringBuilder loggedUrl = new StringBuilder();
+		if(hasPswd) {
+			loggedUrl.append(jdbcUrl.substring(0, jdbcUrl.indexOf(URL_PARAM_USER)));
+			loggedUrl.append(URL_PARAM_USER).append("xxxxx");
+			loggedUrl.append(URL_PARAM_PASS).append("xxxxxxxx");
+		} else {
+			loggedUrl.append(jdbcUrl);
+		}
+
+		log.info("Default {} JdbcUrl provider. Connecting to {} with driver {}", 
+				DatabaseType.POSTGRESQL.name(), loggedUrl.toString(), 
+				this.customProvider.getJdbcDriverClass());
+
+		return this.customProvider;
+	}
+
+	private class CustomCloudSqlJdbcInfoProvider extends DefaultCloudSqlJdbcInfoProvider {
+
+		private String host;
+		private String user;
+		private String password;
+
+		CustomCloudSqlJdbcInfoProvider(GcpCloudSqlProperties properties,
+				DatabaseType databaseType, String host, String user, String password) {
+			super(properties, databaseType);
+			this.host = host;
+			this.user = user;
+			this.password = password;
+		}
+
+		@Override
+		public String getJdbcUrl() {
+			String jdbcUrl = super.getJdbcUrl();
+			if(StringUtils.hasText(jdbcUrl)) {
+				StringBuilder sb = new StringBuilder(jdbcUrl);
+				sb.append(URL_PARAM_USER).append(this.user);
+				sb.append(URL_PARAM_PASS).append(this.password);
+				jdbcUrl = sb.toString();
+				if(jdbcUrl.contains("//google/")) {
+					jdbcUrl = jdbcUrl.replaceFirst("google", this.host);
+				}
+			}
+			return jdbcUrl;
+		}
+
+	}
+}

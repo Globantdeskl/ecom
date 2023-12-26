@@ -1,0 +1,64 @@
+package com.app;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+
+public class TestApp {
+
+   class Employee {
+
+		public Employee(String empId, String empName, Double salary, int age) {
+			super();
+			this.empId = empId;
+			this.empName = empName;
+			this.salary = salary;
+			this.age = age;
+		}
+
+		public String empId;
+		public String empName;
+		public Double salary;
+		public int age;
+
+		@Override
+		public String toString() {
+			return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + ", age=" + age + "]";
+		}
+
+	}
+
+	// TODO : Need to Implement by using Java 8 Streams
+	public static void printEmployeeName(Map<String, Employee> empMap, String ageLimit) {
+		// Print all employee's name whose age is greater than ageLimit(second parameter
+		empMap.entrySet().stream().filter(x -> x.getValue().age > Integer.valueOf(ageLimit)).forEach(System.out::print);
+	}
+
+	public static void main(String... strings) {
+		// Created 4 Employee Objects
+		Employee e1 = new Employee("e1", "Amar", 1000.0, 25);
+		Employee e2 = new Employee("e2", "Akbar", 1050.0, 27);
+		Employee e3 = new Employee("e3", "Anthony", 1100.0, 23);
+		Employee e4 = new Employee("e4", "Geeta", 1200.0, 26);
+
+		// Populate employee Object in map.
+		Map<String, Employee> empMap = new HashMap<String, Employee>();
+		empMap.put("e1", Employee("e1", "Amar", 1000.0, 25));
+		empMap.put("e2", Employee("e2", "Akbar", 1050.0, 27));
+		empMap.put("e3", Employee("e3", "Anthony", 1100.0, 23));
+		empMap.put("e4", Employee("e4", "Geeta", 1200.0, 26));
+
+		printEmployeeName(empMap, "25");
+		
+		 Comparator<Employee> employeeNameComparator = Comparator.comparing(x -> x. );
+	    
+	    Arrays.sort(employees, employeeNameComparator);
+
+	}
+
+	private static Employee Employee(String string, String string2, double d, int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

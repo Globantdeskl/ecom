@@ -1,0 +1,5 @@
+vertex:
+  service-endpoint: ${VERTEX_SERVICE_ENDPOINT}
+  wsdl-location: ${VERTEX_WSDL_ENDPOINT}
+  user-name: ${VERTEX_USERNAME}
+  password: ${VERTEX_PASSWORD}

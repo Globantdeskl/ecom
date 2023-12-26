@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+    <property name="charset" value="UTF-8"/>
+
+    <module name="TreeWalker">
+
+        <module name="CommentsIndentation"/>
+        <module name="CyclomaticComplexity">
+            <property name="max" value="13"/>
+            <property name="switchBlockAsSingleDecisionPoint" value="true"/>
+            <property name="tokens"
+                      value="LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_CASE, LITERAL_CATCH, LAND, LOR"/>
+        </module>
+        <module name="DefaultComesLast"/>
+        <module name="EmptyBlock"/>
+        <module name="EmptyCatchBlock">
+            <property name="exceptionVariableName" value="expected"/>
+        </module>
+        <module name="EmptyStatement"/>
+        <module name="EqualsAvoidNull"/>
+        <module name="FinalClass"/>
+        <module name="InnerAssignment"/>
+        <module name="LeftCurly"/>
+        <module name="MethodCount">
+            <property name="maxPublic" value="110"/>
+        </module>
+        <module name="MethodLength"/>
+        <module name="MethodName"/>
+        <module name="ModifiedControlVariable"/>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="NeedBraces"/>
+        <module name="OneStatementPerLine"/>
+        <module name="PackageName"/>
+        <module name="ParameterAssignment"/>
+        <module name="ParameterName"/>
+        <module name="ReturnCount">
+            <property name="max" value="3"/>
+            <property name="maxForVoid" value="1"/>
+            <property name="tokens" value="METHOD_DEF"/>
+        </module>
+        <module name="ReturnCount">
+            <property name="max" value="1"/>
+            <property name="maxForVoid" value="0"/>
+            <property name="tokens" value="CTOR_DEF, LAMBDA"/>
+        </module>
+        <module name="RightCurly"/>
+        <module name="StaticVariableName"/>
+        <module name="StringLiteralEquality"/>
+        <module name="RedundantImport"/>
+        <module name="AnnotationUseStyle">
+            <property name="trailingArrayComma" value="never"/>
+        </module>
+        <module name="EmptyLineSeparator">
+            <property name="allowMultipleEmptyLines" value="false"/>
+            <property name="allowNoEmptyLineBetweenFields" value="false"/>
+            <property name="tokens" value="METHOD_DEF"/>
+        </module>
+    </module>
+    <module name="FileLength">
+        <property name="max" value="1800"/>
+        <property name="fileExtensions" value="java"/>
+    </module>
+    <module name="SuppressionFilter">
+        <property name="file" value="${config_loc}/suppressions.xml"/>
+    </module>
+</module>

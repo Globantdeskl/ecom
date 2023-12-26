@@ -1,0 +1,137 @@
+buildscript {
+	dependencies {
+		classpath(
+		["org.springframework.boot:spring-boot-gradle-plugin:2.3.4.RELEASE"],
+		["org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0"],
+		["com.google.guava:guava"]
+		)
+	}
+}
+
+plugins {
+	id 'org.springframework.boot' version '2.3.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id 'eclipse'
+	id 'idea'
+	id 'com.google.cloud.tools.jib' version '2.4.0'
+}
+
+apply plugin: "org.sonarqube"
+apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
+
+group = 'com.aeo.checkout.tax'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '14'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+	jib {
+		container {
+			user '10000:10000'
+			jvmFlags = ['-javaagent:/app/libs/newrelic-agent-6.4.2.jar', 
+						'-Dnewrelic.config.file=/app/resources/newrelic.yml']
+		}
+		from {
+			image "openjdk:14"
+		}
+	}
+}
+
+ext {
+	set('springCloudVersion', "Hoxton.SR8")
+}
+
+repositories {
+	maven {
+		url "https://artifactory.ae.com/artifactory/libs-release/"
+	}
+}
+
+dependencies {
+
+	implementation(
+			['org.springframework.boot:spring-boot-starter'],
+			['org.springframework.boot:spring-boot-starter-actuator'],
+			['org.springframework.boot:spring-boot-starter-web'],
+			['org.springframework.cloud:spring-cloud-starter-sleuth'],
+			["org.springframework.boot:spring-boot-starter-web"],
+			["org.springframework.boot:spring-boot-starter-web-services"],
+			["org.apache.httpcomponents:httpclient"],
+			["javax.jws:javax.jws-api:1.1"],
+			["jakarta.xml.bind:jakarta.xml.bind-api"],
+			["org.glassfish.jaxb:jaxb-runtime"],
+			["org.springframework.integration:spring-integration-core"],
+			["com.newrelic.agent.java:newrelic-api:6.4.2"],
+			["com.newrelic.agent.java:newrelic-agent:6.4.2"],
+			["org.springframework:spring-aspects"],
+			["org.springframework.retry:spring-retry"],
+			["io.springfox:springfox-swagger2:2.9.2"],
+   			["io.springfox:springfox-swagger-ui:2.9.2"],
+   			["org.springframework.cloud:spring-cloud-starter-netflix-hystrix"],
+   			["de.codecentric:chaos-monkey-spring-boot:2.2.0"],
+   			["com.aeo:logging-spring-boot:1.1.0"]
+	)
+
+	testImplementation(
+			['org.springframework.boot:spring-boot-starter-test'],
+			['org.junit.jupiter:junit-jupiter'],
+			['org.mockito:mockito-junit-jupiter']
+	)
+
+	testRuntimeOnly 'org.junit.vintage:junit-vintage-engine'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+	testLogging {
+		exceptionFormat = 'full'
+	}
+	afterSuite { desc, result ->
+		if (!desc.parent) {
+			println "Results: (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+			boolean skipTests = Boolean.parseBoolean(project.findProperty('SKIP_TESTS') ?: "false")
+			if (result.testCount == 0 && !skipTests) {
+				throw new IllegalStateException("No tests were found. Failing the build")
+			}
+		}
+	}
+	finalizedBy jacocoTestReport
+}
+
+sonarqube {
+	properties {
+		property "sonar.projectKey", "MSAT-TAX-CALCULATOR"
+		property "sonar.projectName", "Checkout Tax Calculator Microservices Application"
+		property "sonar.projectVersion", "1.0"
+		property "sonar.sourceEncoding", "iso-8859-1"
+		property "sonar.coverage.exclusions", "**/model/*,**/config/*,**/CheckoutTaxCalculatorApplication.java"
+		property "sonar.sources","src/main/java"
+		property "sonar.exclusions", "src/test/java/**/*,**/vertex/client/*"
+		property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
+		property "sonar.login","admin"
+		property "sonar.password","admin"
+	 }
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+		csv.enabled false
+		html.destination file("${buildDir}/reports/code-coverage")
+	}
+}

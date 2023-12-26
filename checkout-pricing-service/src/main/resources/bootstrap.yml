@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    gcp:
+      secretmanager:
+        enabled: ${GCP_SECRETS_ENABLED:false}

@@ -1,0 +1,33 @@
+envVars:
+  ENV: "prod"
+  SPRING_PROFILES_ACTIVE: "kubernetes"
+  VERTEX_SERVICE_ENDPOINT: "https://tax.ae.com/vertex-ws/services/CalculateTax90"
+  VERTEX_WSDL_ENDPOINT: "https://tax.ae.com/vertex-ws/services/CalculateTax90?wsdl"
+  VERTEX_USERNAME: "eComm"
+  VERTEX_PASSWORD: "vertex"
+  NEW_RELIC_APP_NAME: "checkout-tax-calculator-prod"
+
+#Environment name
+env: prod
+
+#Deployment values
+deployment:
+  replicas: 1
+
+#Workload identity enablement for the GCP API access
+workloadIdentity:
+  enabled: false
+  gsa_name:
+  gcp_project_id: aeo-gke-internal-prod-8fad
+
+#Horizontal Pod autoscaling options
+autoscaling:
+  enabled: true
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+#Ingress values
+ingress:
+  enabled: true
+  domain: int-pr.ae-gcp.io

@@ -1,0 +1,44 @@
+envVars:
+  SPRING_PROFILES_ACTIVE: "kubernetes"
+  ENV: "sit2"
+  NEW_RELIC_APP_NAME: "checkout-pricing-service-sit2"
+  GCP_SECRETS_ENABLED: "true"
+
+#Environment name
+env: sit2
+
+#Deployment values
+deployment:
+  replicas: 1
+
+#Workload identity enablement for the GCP API access
+workloadIdentity:
+  enabled: false
+  gsa_name: checkout-pricing-service-sit2
+  gcp_project_id: aeo-gke-internal-nonprod-4379
+  
+#INSTANCE_CONNECTION_NAME (project:region:instance) parameter for CloudSQL connection
+cloudsqlProxy:
+  enabled: false
+  instanceConnectionName: "-instances=aeo-cust-checkout-np-960f:us-east4:checkout-pricing-srvc-db-sit2=tcp:5432"
+
+#Horizontal Pod autoscaling options
+autoscaling:
+  enabled: true
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+#Ingress values
+ingress:
+  enabled: true
+  domain: int-np.ae-gcp.io
+
+#Resources Limits and Requests
+resources:
+  requests:
+    memory: "1024Mi"
+    cpu: 200m
+  limits:
+    memory: "2048Mi"
+    cpu: 500m

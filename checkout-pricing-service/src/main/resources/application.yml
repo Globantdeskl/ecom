@@ -1,0 +1,45 @@
+server:
+  port: 8080
+management:
+  endpoint:
+    health:
+      show-details: always
+    loggers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: 
+          - 'health'
+          - 'loggers'
+          - 'hystrix.stream'
+          - 'beans'
+          - 'conditions'
+          - 'heapdump'
+          - 'threaddump'
+          - 'metrics'
+          - 'mappings'
+          - 'channels'
+spring:
+  autoconfigure:
+    exclude:
+    - org.springframework.boot.autoconfigure.r2dbc.R2dbcAutoConfiguration
+    - org.springframework.boot.autoconfigure.data.r2dbc.R2dbcDataAutoConfiguration
+  banner:
+    location: classpath:static/banner.txt
+  application:
+    name: checkout-pricing-service
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+  cloud:
+    gcp:
+      core:
+        enabled: false
+      sql:
+        enabled: false
+aeo-logging:
+  exclude-routes:
+  - 'actuator'
+  - 'favicon'
+  - 'swagger'

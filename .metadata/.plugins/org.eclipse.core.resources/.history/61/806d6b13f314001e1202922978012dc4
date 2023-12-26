@@ -1,0 +1,30 @@
+package com.app;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class ReversetheString {
+
+	public static void main(String[] args) {
+
+		String ss = "Narendar";
+
+		String valueIs = Stream.of(ss.split("")).distinct().collect(Collectors.joining());
+
+		System.out.println(valueIs.charAt(0));
+
+		System.out.println(Stream.of(ss.split("")).count());
+		
+		Set<String> set = new HashSet<>();
+		
+		String valueIIs = Stream.of(ss.split("")).filter(x -> !set.add(x)).collect(Collectors.joining());
+		
+		
+		System.out.print(valueIs.charAt(0));
+		
+
+	}
+
+}

@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gcp:
+      core:
+        enabled: true
+      pubsub:
+        enabled: true
+app-configs:
+  split-call-enabled: ${SPLIT_CALL_ENABLED}
+  split-call-endpoint: ${SPLIT_CALL_ENDPOINT}
+  fulfill-order-project-id: ${FULFILLMENT_PUBSUB_PROJECT_ID}
+  fulfill-order-topic-name: ${FULFILLMENT_PUBSUB_TOPIC_NAME}
+  submit-order-project-id: ${SUBMIT_ORDER_PUBSUB_PROJECT_ID}
+  submit-order-subscription: ${SUBMIT_ORDER_PUBSUB_SUBSCRIPTION}
+  basic-auth-key: ${BASIC_AUTH_KEY}

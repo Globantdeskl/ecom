@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.import">
+		<item key="project_location" value="F:\workspace_zensar\worspace-L1\payments-integration-tests"/>
+		<item key="gradle_distribution" value="GRADLE_DISTRIBUTION(VERSION(7.6))"/>
+		<item key="gradle_user_home" value="F:\gradle-7.6"/>
+		<item key="build_scans" value="true"/>
+		<item key="auto_sync" value="true"/>
+		<item key="show_console_view" value="true"/>
+		<item key="offline_mode" value="true"/>
+		<item key="java_home" value="C:\Program Files\Java\jdk-11.0.8"/>
+	</section>
+</section>

@@ -1,0 +1,4 @@
+env: qa
+min-instances: 1
+max-instances: 1
+public-domain: apps.non-prod.ae-cf.io

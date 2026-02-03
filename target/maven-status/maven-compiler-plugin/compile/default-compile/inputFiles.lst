@@ -1,0 +1,13 @@
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\config\OpenAIConfig.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\config\WebClientConfig.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\controller\CodeGenController.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\dto\CodeGenRequest.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\dto\CodeRule.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\repository\RuleRepository.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\service\impl\OpenAIServiceImpl.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\service\OpenAIService.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\SpringAiCodegenApplication.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\util\FileWriterutil.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\util\OpenAIProperties.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\util\PromptBuilder.java
+F:\Workspace-ECS\codeGen\src\main\java\com\example\aicodegen\util\ResponseParser.java

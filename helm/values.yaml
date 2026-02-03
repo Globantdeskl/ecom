@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: myrepo/order-service
+  tag: "1.0.0"
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
+
+hpa:
+  enabled: true
+  min: 2
+  max: 10
+  cpu: 70

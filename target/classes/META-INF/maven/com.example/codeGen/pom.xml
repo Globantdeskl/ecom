@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>4.0.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>codeGen</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>codeGen</name>
+	<description>Demo project for Spring Boot</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+		<spring-ai.version>2.0.0-M2</spring-ai.version>
+	</properties>
+	<dependencies>
+			<!-- REQUIRED: Spring Boot core -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>io.github.resilience4j</groupId>
+	    <artifactId>resilience4j-spring-boot3</artifactId>
+	</dependency>
+	 <!-- Swagger / OpenAPI -->
+	    <dependency>
+	        <groupId>org.springdoc</groupId>
+	        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+	        <version>2.5.0</version>
+	    </dependency>
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-webflux</artifactId>
+	</dependency>
+	
+		<!-- Micrometer Tracing -->
+	<dependency>
+	    <groupId>io.micrometer</groupId>
+	    <artifactId>micrometer-tracing-bridge-otel</artifactId>
+	</dependency>
+	
+	<!-- OpenTelemetry OTLP exporter (Jaeger) -->
+	<dependency>
+	    <groupId>io.opentelemetry</groupId>
+	    <artifactId>opentelemetry-exporter-otlp</artifactId>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.ai</groupId>-->
+<!--			<artifactId>spring-ai-starter-model-bedrock</artifactId>-->
+<!--		</dependency>-->
+    <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.ai</groupId>
+				<artifactId>spring-ai-bom</artifactId>
+				<version>${spring-ai.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			        <!-- Spring AI BOM (you already have this) -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-bom</artifactId>
+            <version>${spring-ai.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <!-- ✅ Resilience4j BOM -->
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-bom</artifactId>
+            <version>2.2.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-bom</artifactId>
+            <version>1.38.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <!-- ✅ OpenTelemetry instrumentation BOM (THIS WAS MISSING) -->
+        <dependency>
+            <groupId>io.opentelemetry.instrumentation</groupId>
+            <artifactId>opentelemetry-instrumentation-bom</artifactId>
+            <version>2.5.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        
+         <!-- Spring AI BOM (keep this) -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-bom</artifactId>
+            <version>${spring-ai.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<!-- JIB: Container Image without Docker -->
+    <plugin>
+      <groupId>com.google.cloud.tools</groupId>
+      <artifactId>jib-maven-plugin</artifactId>
+      <version>3.4.0</version>
+
+      <configuration>
+        <!-- Base Image -->
+        <from>
+          <image>eclipse-temurin:17-jre-alpine</image>
+        </from>
+
+        <!-- Target Image -->
+        <to>
+          <image>myrepo/order-service</image>
+          <tags>
+            <tag>${project.version}</tag>
+            <tag>${git.commit.id.abbrev}</tag>
+          </tags>
+        </to>
+
+        <!-- Container Config -->
+        <container>
+          <mainClass>com.company.order.OrderServiceApplication</mainClass>
+          <ports>
+            <port>8080</port>
+          </ports>
+          <user>1000</user> <!-- non-root -->
+          <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+
+          <jvmFlags>
+            <jvmFlag>-XX:+UseContainerSupport</jvmFlag>
+            <jvmFlag>-XX:MaxRAMPercentage=75</jvmFlag>
+          </jvmFlags>
+        </container>
+      </configuration>
+    </plugin>
+			
+		</plugins>
+	</build>
+
+</project>

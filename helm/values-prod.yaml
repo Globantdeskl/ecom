@@ -1,0 +1,7 @@
+replicaCount: 3
+
+image:
+  tag: 1.0.0
+
+hpa:
+  enabled: true

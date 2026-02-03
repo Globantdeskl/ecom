@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  labels:	#Required for scaling, monitoring, GitOps
+    app: order-service
+    tier: backend
+spec:
+  type: ClusterIP   # Best practice for microservices [ Secure internal access (Ingress handles external traffic) ]
+  selector:
+    app: order-service
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80        # Service port (internal) [Standardized internal service port]
+      targetPort: 8080  # Spring Boot container port [] Mandatory for Istio / Service Mesh]

@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: codegen-ai-service
+server:
+   port: 8080
+openai:
+   #apiKey: ${OPENAI_API_KEY} 
+   model: gpt-4o-mini
+resilience4j:
+  ratelimiter:
+    instances:
+      openai:
+        limit-for-period: 1
+        limit-refresh-period: 10s
+otel:
+  service:
+    name: codegen-ai-service
+  exporter:
+    otlp:
+      endpoint: http://localhost:4317
+  traces:
+    exporter: otlp
+  metrics:
+    exporter: none
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+

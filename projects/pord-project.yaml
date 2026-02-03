@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: prod-project
+  namespace: argocd
+spec:
+  description: Production environment
+
+  sourceRepos:
+    - https://github.com/your-org/gitops-repo
+
+  destinations:
+    - namespace: prod
+      server: https://kubernetes.default.svc
+
+  # Allow deploy only in business hours
+  syncWindows:
+    - kind: allow
+      schedule: "Mon-Fri 10:00-18:00"
+      duration: 8h
+
+  # Strong safety for prod
+  clusterResourceBlacklist:
+    - group: "*"
+      kind: "*"

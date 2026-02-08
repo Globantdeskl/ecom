@@ -1,4 +1,0 @@
-username: guest
-ingress:
-    enabled: false
-    domain: int-np.ae-gcp.io #change if needed another domain

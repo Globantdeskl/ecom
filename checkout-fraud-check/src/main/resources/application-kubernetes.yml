@@ -1,7 +1,0 @@
-aci-client:
-  division-number: ${ACI_DIVISION_NUMBER}
-  client-id: ${ACI_CLIENT_ID}
-  ssl-key-id: ${ACI_SSL_KEY}
-  config-path: ${ACI_CONFIG_PATH}
-fraud:
-  enabled: ${FRAUD_ENABLED}

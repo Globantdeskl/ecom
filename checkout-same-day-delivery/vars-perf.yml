@@ -1,4 +1,0 @@
-env: perf
-min-instances: 1
-max-instances: 2
-public-domain: apps.gcp-prod.ae-cf.io

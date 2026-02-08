@@ -1,7 +1,0 @@
-aci-client:
-  division-number: ${vcap.services.pcf-to-aci.credentials.division-number:ae_ugp_rs}
-  client-id: ${vcap.services.pcf-to-aci.credentials.client-id:000450030001}
-  ssl-key-id: ${vcap.services.pcf-to-aci.credentials.ssl-key:20171}
-  config-path: ${vcap.services.pcf-to-aci.credentials.config-path:/home/vcap/app/BOOT-INF/classes/data/security}
-fraud:
-  enabled: ${vcap.services.fraud-enabled.credentials.fraud-enabled:true}

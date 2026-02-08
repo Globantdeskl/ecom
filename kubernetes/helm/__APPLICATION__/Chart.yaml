@@ -1,4 +1,0 @@
-apiVersion: v1
-description: A Helm chart for the GKE
-name: __APPLICATION__
-version: 1.0

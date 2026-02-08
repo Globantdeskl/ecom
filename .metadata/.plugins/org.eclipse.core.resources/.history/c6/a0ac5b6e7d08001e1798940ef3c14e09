@@ -1,0 +1,40 @@
+package com.app;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class FirstNonRepeated {
+	public static void main(String args[]) {
+
+		String input = "Java articles are Awesome";
+		String st = Stream.of(input.split("")).distinct().collect(Collectors.joining(""));
+		char p = st.charAt((st.length() - 1) / 2);
+		System.out.println(p);
+
+		List<Integer> myList = Arrays.asList(10, 15, 8, 49, 25, 98, 98, 32, 15);
+
+		myList.stream().sorted().forEach(System.out::println);
+
+		myList.stream().sorted(Collections.reverseOrder()).forEach(System.out::println);
+
+		myList.stream().sorted(Collections.reverseOrder()).forEach(System.out::println);
+
+		List<Integer> integerList = Arrays.asList(4, 5, 6, 7, 1, 2, 3);
+		integerList.stream().map(i -> i * i * i).filter(i -> i > 50).forEach(System.out::println);
+
+		int arr[] = { 99, 55, 203, 99, 4, 91 };
+		Arrays.parallelSort(arr);
+		// Sorted the Array using parallelSort()
+
+		Arrays.stream(arr).forEach(x -> System.out.print(x + " "));
+
+		//List<String> nameLst = names.stream().map(String::toUpperCase).collect(Collectors.toList());
+		//System.out.println(nameLst);
+
+	}
+}
+
+//Jav rticlesAwom

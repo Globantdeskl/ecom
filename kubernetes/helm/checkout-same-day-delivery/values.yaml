@@ -1,0 +1,61 @@
+#Image values
+image:
+  repo: gcr.io/aeo-gke-terraform-f793/
+  imageName: checkout-same-day-delivery
+  tag: 0.0.1-SNAPSHOT
+
+#Deployment values
+deployment:
+  replicas: 1
+
+#Service values
+service:
+  targetPort: 8084
+
+#Resources Limits and Requests
+resources:
+  requests:
+    memory: "1024Mi"
+    cpu: 200m
+  limits:
+    memory: "2048Mi"
+#    cpu: 200m
+
+#WI. Persisted to be able to run locally. Disabled by default.
+workloadIdentity:
+  enabled: false
+  gsa_name:
+  gcp_project_id:
+
+#INSTANCE_CONNECTION_NAME (project:region:instance) parameter for CloudSQL connection
+cloudsqlProxy:
+  enabled: false
+  instanceConnectionName:
+
+#Horizontal Pod autoscaling options
+autoscaling:
+  enabled: false
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+#livenessProbe
+livenessProbe:
+  initialDelaySeconds: 240
+
+#readinessProbe
+readinessProbe:
+  initialDelaySeconds: 30
+
+#Ingress values. Change values for this in override_values for distinct environment
+ingress:
+  enabled: false
+  domain:  int-np.ae-gcp.io
+  hostname: # {{ .Chart.Name }}-{{ .Value.env }} will be used if empty
+
+javaOpts: ""
+
+newRelic:
+  enabled: true
+
+env: undefined

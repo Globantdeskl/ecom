@@ -1,0 +1,26 @@
+package com.app.inter;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class whenComparing_thenSortedByName {
+
+	public static void main(String[] args) {
+
+		List<Employee> list = new ArrayList<>();
+		list.add(new Employee("Narendar", 23, 78.9, 8));
+		list.add(new Employee("Sindamika", 25, 73.9, 12));
+		list.add(new Employee("Anamika Singh Shekhawat", 26, 73.9, 13));
+		
+		
+
+		Stream.of(1, 4, 2, 5).sorted(Comparator.reverseOrder());
+		// stream is now [5, 4, 2, 1]
+
+		Stream.of("foo", "test", "a").sorted(Comparator.comparingInt(String::length).reversed());
+
+	}
+
+}

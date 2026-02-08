@@ -1,0 +1,64 @@
+package com.app.inter;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		String str = "Nauuurendar";
+		List<String> myList = Arrays.asList(str);
+		Set<String> items = new HashSet<>();
+		List<String> lh = myList.stream().filter(n -> items.add(n)).collect(Collectors.toList());
+		System.out.println(lh);
+
+		// create a Optional
+		Optional<Integer> op = Optional.of(9455);
+
+		// print value
+		System.out.println("Optional: " + op);
+
+		// check for the value
+		System.out.println("Is any value present: " + op.isPresent());
+
+		// apply ifPresentOrElse
+		op.ifPresentOrElse((value) -> {
+			System.out.println("Value is present, its: " + value);
+		}, () -> {
+			System.out.println("Value is empty");
+		});
+
+		// orElseThrow supplier
+		System.out.println(op.orElseThrow(ArithmeticException::new));
+
+		Optional<Integer> opp = Optional.of(123456);
+
+		Optional<Integer> y = opp.filter(num -> num % 2 == 0);
+
+		y.ifPresentOrElse(value -> System.out.println("Found: " + value), () -> System.out.println("Not found"));
+
+		y.ifPresent((value) -> {
+			System.out.println("Found: " + value);
+		});
+		
+		
+		y.ifPresentOrElse(
+				
+				(value) -> 
+		            {
+		            	System.out.println("Found: " + value);
+		            },
+		        () -> 
+		            {
+		            	System.out.println("Not found");
+		            });
+		
+
+	}
+
+}

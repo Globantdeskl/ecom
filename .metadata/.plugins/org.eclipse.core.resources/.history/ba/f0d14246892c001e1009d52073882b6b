@@ -1,0 +1,24 @@
+package com.app.inter;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class whenComparing_thenSortedByName {
+
+	public static void main(String[] args) {
+		
+		
+		List<Employee> list = new ArrayList<>();
+		
+		
+
+		Stream.of(1, 4, 2, 5).sorted(Comparator.reverseOrder());
+		// stream is now [5, 4, 2, 1]
+
+		Stream.of("foo", "test", "a").sorted(Comparator.comparingInt(String::length).reversed());
+
+	}
+
+}

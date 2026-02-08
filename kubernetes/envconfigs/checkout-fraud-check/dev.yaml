@@ -1,0 +1,34 @@
+envVars:
+  ENV: "dev"
+  SPRING_PROFILES_ACTIVE: "kubernetes"
+  ACI_DIVISION_NUMBER: "ae_ugp_rs"
+  ACI_CLIENT_ID: "000450030001"
+  ACI_SSL_KEY: "20171"
+  ACI_CONFIG_PATH: "/app/resources/data/kubernetes"
+  FRAUD_ENABLED: "true"
+  NEW_RELIC_APP_NAME: "checkout-fraud-check-dev"
+
+#Environment name
+env: dev
+
+#Deployment values
+deployment:
+  replicas: 1
+
+#Workload identity enablement for the GCP API access
+workloadIdentity:
+  enabled: false
+  gsa_name: 
+  gcp_project_id: aeo-gke-internal-nonprod-4379
+
+#Horizontal Pod autoscaling options
+autoscaling:
+  enabled: false
+  maxReplicas: 1
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+#Ingress values
+ingress:
+  enabled: true
+  domain: int-np.ae-gcp.io

@@ -1,0 +1,97 @@
+package com.app;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class ReversetheString {
+
+	public static String reverse(String string) {
+		return Stream.of(string).map(word -> new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
+	}
+
+	public static String rotation(String s1, String s2) {
+
+		if (s1.length() != s2.length()) {
+			return "String is not rotational";
+		}
+
+		Arrays.sort(s1.toCharArray());
+		Arrays.sort(s2.toCharArray());
+
+		if (s1.equals(s2)) {
+
+			return "String is  rotational";
+		}
+
+		return "String is not rotational";
+	}
+
+	public static Boolean isAnagram(String word1, String word2) {
+		List<String> listWord1 = new ArrayList<>(Arrays.asList(word1.split("")));
+		List<String> listWord2 = new ArrayList<>(Arrays.asList(word2.split("")));
+
+		Collections.sort(listWord1);
+		Collections.sort(listWord2);
+
+		word1 = String.join("", listWord1);
+		word2 = String.join("", listWord2);
+
+		System.out.println("word1 : " + word1);
+
+		System.out.println("word2 : " + word2);
+
+		// return listWord1.equals(listWord2);
+		return word1.equals(word2);
+		// return word1 == word2 ; // not working because == tests for reference
+		// equality
+	}
+
+	public static void main(String[] args) {
+
+		System.out.println(isAnagram("face", "cafe"));
+		System.out.println(isAnagram("face", "caffe"));
+
+		int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+		// 1st argument, init value = 0
+		int sum = Arrays.stream(numbers).reduce(0, (a, b) -> a + b);
+
+		int summ = Arrays.stream(numbers).reduce(0, Integer::sum);
+
+		int max1 = Arrays.stream(numbers).reduce(0, Integer::max);
+
+		int min1 = Arrays.stream(numbers).reduce(0, Integer::min);
+
+		System.out.println("sum : " + sum); // 55
+
+//		String ss = "Narendar";
+//
+//		String valueIs = Stream.of(ss.split("")).distinct().collect(Collectors.joining());
+//
+//		// System.out.println(valueIs.charAt(0));
+//
+//		// System.out.println(Stream.of(ss.split("")).count());
+//
+//		Set<String> set = new HashSet<>();
+//
+//		StringBuilder ds = new StringBuilder();
+//
+//		String reversed = new StringBuilder(ss).reverse().toString();
+//
+//		String rev1 = Stream.of(ss).map(word -> new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
+//
+//		System.out.println(reverse(ss));
+//
+//		System.out.print(rotation("NANC", "NANB"));
+
+		// String is rotational
+
+	}
+
+}

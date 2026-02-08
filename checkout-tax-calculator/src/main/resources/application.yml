@@ -1,0 +1,63 @@
+server:
+  port: 8082
+management:
+  endpoint:
+    health:
+      show-details: always
+    loggers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: 
+          - 'health'
+          - 'loggers'
+          - 'hystrix.stream'
+          - 'beans'
+          - 'conditions'
+          - 'heapdump'
+          - 'threaddump'
+          - 'metrics'
+          - 'mappings'
+          - 'channels'
+logging:
+  group:
+    aeo: com.aeo.checkout
+spring:
+  banner:
+    location: static/banner.txt
+  application:
+    name: checkout-tax-calculator
+  sleuth:
+    hystrix:
+      strategy:
+        enabled: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+hystrix:
+  metrics:
+    enabled: true
+    polling-interval-ms: 1000
+  command.vertexWS.circuitBreaker.enabled: true
+  command.vertexWS.fallback.enabled: true
+  command.vertexWS.execution.timeout.enabled: true
+  command.vertexWS.requestCache.enabled: false
+  command.vertexWS.requestLog.enabled: false
+  command.vertexWS.circuitBreaker.requestVolumeThreshold: 1
+  command.vertexWS.circuitBreaker.errorThresholdPercentage: 3
+  command.vertexWS.circuitBreaker.sleepWindowInMilliseconds: 60000
+  command.vertexWS.execution.isolation.thread.timeoutInMilliseconds: 5000
+  command.vertexWS.metrics.rollingStats.timeInMilliseconds: 60000
+  command.vertexWS.metrics.rollingStats.numBuckets: 60
+  command.vertexWS.metrics.healthSnapshot.intervalInMilliseconds: 60000
+vertex:
+  service-endpoint: "https://dev-tax.ae.com/vertex-ws/services/CalculateTax90"
+  wsdl-location: "https://dev-tax.ae.com/vertex-ws/services/CalculateTax90?wsdl"
+  user-name: "eComm"
+  password: "vertex"
+  timeout: 2000
+aeo-logging:
+  exclude-routes:
+  - '/actuator'
+  - '/favicon'

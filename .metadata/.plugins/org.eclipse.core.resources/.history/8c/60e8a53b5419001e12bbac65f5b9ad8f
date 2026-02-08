@@ -1,0 +1,14 @@
+package com.app;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class InterviewQuestions {
+
+	public static void main(String[] args) {
+		List<String> stringList = Arrays.asList("Hello", "Interview", "Questions", "Answers", "Ram", "for");
+		long count = stringList.stream().filter(str -> str.length() > 3).count();
+		System.out.println("String count with greater than 3 digit : " + count);
+	}
+
+}

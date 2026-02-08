@@ -1,0 +1,35 @@
+{
+  "groups": [
+    {
+      "name": "aci-client",
+      "type": "com.aeo.checkout.fraud.config.FraudConfig",
+      "sourceType": "com.aeo.checkout.fraud.config.FraudConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "aci-client.division-number",
+      "type": "java.lang.String",
+      "sourceType": "com.aeo.checkout.fraud.config.FraudConfig",
+	  "sourceMethod": "getDivisionNumber()"
+    },
+    {
+      "name": "aci-client.config-path",
+      "type": "java.lang.String",
+      "sourceType": "com.aeo.checkout.fraud.config.FraudConfig",
+	  "sourceMethod": "getConfigPath()"
+    },
+    {
+      "name": "aci-client.client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.aeo.checkout.fraud.config.FraudConfig",
+	  "sourceMethod": "getClientId()"
+    },
+    {
+      "name": "aci-client.ssl-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.aeo.checkout.fraud.config.FraudConfig",
+	  "sourceMethod": "getSslKeyId()"
+    }
+  ]
+}

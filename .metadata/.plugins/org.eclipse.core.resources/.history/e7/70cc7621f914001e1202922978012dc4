@@ -1,0 +1,36 @@
+package com.app;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class ReversetheString {
+
+	public static String reverse(String string) {
+		return Stream.of(string).map(word -> new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
+	}
+
+	public static void main(String[] args) {
+
+		String ss = "Narendar";
+
+		String valueIs = Stream.of(ss.split("")).distinct().collect(Collectors.joining());
+
+		// System.out.println(valueIs.charAt(0));
+
+		// System.out.println(Stream.of(ss.split("")).count());
+
+		Set<String> set = new HashSet<>();
+
+		StringBuilder ds = new StringBuilder();
+
+		String reversed = new StringBuilder(ss).reverse().toString();
+
+		String rev1 = Stream.of(ss).map(word -> new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
+
+		System.out.print(reverse(ss));
+
+	}
+
+}

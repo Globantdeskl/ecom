@@ -1,0 +1,46 @@
+envVars:
+  SPRING_PROFILES_ACTIVE: "kubernetes"
+  ENV: "dev"
+  NEW_RELIC_APP_NAME: "checkout-submit-order-dev"
+  SPLIT_CALL_ENABLED: "true"
+  SPLIT_CALL_ENDPOINT: "https://dev.ugp.aeo.qa/order/v1/split/%s" 
+  SUBMIT_ORDER_PUBSUB_PROJECT_ID: "aeo-cust-checkout-np-960f"
+  SUBMIT_ORDER_PUBSUB_SUBSCRIPTION: "checkout-submit-order-sub-dev"
+  FULFILLMENT_PUBSUB_PROJECT_ID: "pivotal-sandbox-243614"
+  FULFILLMENT_PUBSUB_TOPIC_NAME: "pcf_sb_37_1568661014664713627"
+  BASIC_AUTH_KEY: "${k8s_secret://basic-auth/basic-auth-key}"
+
+#Environment name
+env: dev
+
+#Deployment values
+deployment:
+  replicas: 1
+
+#Workload identity enablement for the GCP API access
+workloadIdentity:
+  enabled: true
+  gsa_name: checkout-submit-order-dev
+  gcp_project_id: aeo-gke-internal-nonprod-4379
+
+#Horizontal Pod autoscaling options
+autoscaling:
+  enabled: false
+  maxReplicas: 1
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+#Ingress values
+ingress:
+  enabled: true
+  domain: int-np.ae-gcp.io
+
+#Resources Limits and Requests
+resources:
+  requests:
+    memory: "1024Mi"
+    cpu: 200m
+  limits:
+    memory: "2048Mi"
+    cpu: 500m
+  

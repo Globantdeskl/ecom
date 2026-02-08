@@ -1,0 +1,573 @@
+{
+  "header": {
+    "channel": "WEB",
+    "messageId": "%s",
+    "sourceApplication": "ATG",
+    "sourceApplicationVersion": null,
+    "eventType": null,
+    "timestamp": 1568777623875,
+    "businessUnitId": null,
+    "touchPointId": null,
+    "userId": "ugp475307815",
+    "country": null,
+    "additionalData": [
+      {
+        "value": "orderClassType=default, hasLoyaltyCoupon=false, hasCharityItems=false, isSplitPayment=false, hasLoyaltyId=false, hasCustomizedItems=false, isVGCOrder=false, isBopisOrder=false, paymentMethod=creditCard, userType=registered, hasPLCCPayment=false",
+        "key": "ffMetaData"
+      }
+    ]
+  },
+  "customerOrder": [
+    {
+      "customerOrderId": "123",
+      "externalRefId": null,
+      "orderDesc": null,
+      "orderType": "SALE",
+      "orderStatus": null,
+      "activityDate": 1568777576730,
+      "partnerID": null,
+      "carrierCode": "STD",
+      "carrierServiceCode": null,
+      "shippingSpeed": "Standard Intl (4-6 Business Days)",
+      "consumerDeliveryDate": null,
+      "consumerDeliveryTime": null,
+      "comments": null,
+      "sourceLocType": "WEB",
+      "sourceLocId": null,
+      "sourceWebStoreId": "02954",
+      "sourceCountryCode": "AEO_INTL",
+      "destinationLocType": null,
+      "destinationLocId": null,
+      "custOrderHeaderDesc": {
+        "paymentStatus": "AUTHORIZED",
+        "orderDetails": {
+          "currencyCode": "USD",
+          "orderTotal": null,
+          "adjustmentDate": null,
+          "itemsTotal": null,
+          "itemsTotalAfterDiscount": null,
+          "headerCharges": {
+            "charge": [
+              {
+                "chargeAmount": "0.00",
+                "chargePerUnit": null,
+                "chargeCategory": "SHIPPING_CHARGE",
+                "chargeName": "Shipping_Charge"
+              }
+            ]
+          },
+          "headerTaxes": {
+            "tax": [
+              {
+                "taxCategory": "Service_Tax",
+                "taxName": "Tax",
+                "taxPercentage": null,
+                "taxAmount": "0.00"
+              }
+            ],
+            "taxTotal": null
+          },
+          "headerPromos": null,
+          "orderTaxTotal": null,
+          "chargeTotal": null,
+          "itemDiscountTotal": null,
+          "orderHdrDiscount": null,
+          "orderDiscountTotal": null
+        },
+        "custPreference": {
+          "contactByMail": null,
+          "contactByPhone": null,
+          "contactByEmail": null,
+          "receiptPreference": null,
+          "localeDesc": "en_US"
+        },
+        "orderBillingDtls": {
+          "customerDtl": [
+            {
+              "customerId": null,
+              "profileId": null,
+              "loyaltyId": null,
+              "loyaltyPts": null,
+              "customerType": null,
+              "customerInfo": {
+                "firstName": "Jhon",
+                "lastName": "SmithLongggName",
+                "birthDay": null,
+                "birthMonth": null,
+                "birthYear": null,
+                "birthDate": null,
+                "gender": null
+              },
+              "emails": {
+                "email": [
+                  {
+                    "emailId": null,
+                    "emailType": null,
+                    "primaryEmailInd": null,
+                    "emailAddress": "%s"
+                  }
+                ]
+              },
+              "phones": {
+                "phone": [
+                  {
+                    "phoneId": null,
+                    "phoneType": null,
+                    "phoneNumber": "911234567890",
+                    "phoneCountryCode": null,
+                    "countryCode": null,
+                    "phoneExtension": null,
+                    "primaryPhoneInd": null
+                  }
+                ]
+              },
+              "addresses": {
+                "address": [
+                  {
+                    "addressType": null,
+                    "address1": "Some Street",
+                    "address2": "apt. 1",
+                    "city": "Bangalore",
+                    "county": null,
+                    "stateCode": null,
+                    "stateName": "KA",
+                    "countryCode": "IN",
+                    "countryName": null,
+                    "postalCode": "560085",
+                    "zipOnly": null
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "orderDeliveryDtls": {
+          "shipToStoreId": null,
+          "customerShipDtl": {
+            "customerId": null,
+            "profileId": null,
+            "loyaltyId": null,
+            "loyaltyPts": null,
+            "customerType": null,
+            "customerInfo": {
+              "firstName": "Jhon",
+              "lastName": "SmithLongggName",
+              "birthDay": null,
+              "birthMonth": null,
+              "birthYear": null,
+              "birthDate": null,
+              "gender": null
+            },
+            "emails": null,
+            "phones": null,
+            "addresses": {
+              "address": [
+                {
+                  "addressType": "REGULAR",
+                  "address1": "Some Street",
+                  "address2": "apt. 1",
+                  "city": "Bangalore",
+                  "county": null,
+                  "stateCode": null,
+                  "stateName": "KA",
+                  "countryCode": "IN",
+                  "countryName": null,
+                  "postalCode": "560085",
+                  "zipOnly": null
+                }
+              ]
+            }
+          },
+          "deliveryMethod": "SHP"
+        },
+        "headerInstructions": null,
+        "giftReceiptAssigned": "N",
+        "items": {
+          "item": [
+            {
+              "lineItemNo": 1,
+              "capturedLineItemNo": null,
+              "relatedLineItemNo": null,
+              "itemId": "0027177054",
+              "commerceItemId": "ci43560845",
+              "reservationId": "ci43560845",
+              "itemDescription": null,
+              "itemStatus": null,
+              "isCustomized": null,
+              "quantity": 1,
+              "lineType": null,
+              "productClass": "GOOD",
+              "productURL": "sit.aezone.com/intl/en/p/0115_4292_896",
+              "uom": "EACH",
+              "itemTotal": null,
+              "unitSellPrice": "49.95",
+              "unitRegularPrice": "49.95",
+              "overriddenPrice": null,
+              "overriddenPriceReason": null,
+              "shipLocationId": null,
+              "lineCharges": null,
+              "linePromos": {
+                "promo": [
+                  {
+                    "promotionType": "ITEM_PROMOTION",
+                    "currencyCode": null,
+                    "unitPromoAmount": "2.50",
+                    "promoAmount": null,
+                    "promotionName": "Different category and BOGO...",
+                    "promoComponentDetailId": null,
+                    "promoComponentId": null,
+                    "promoCode": null
+                  }
+                ],
+                "promoTotal": null
+              },
+              "lineTaxes": {
+                "tax": [
+                  {
+                    "taxCategory": "Merchandise_Tax",
+                    "taxName": "Tax",
+                    "taxPercentage": null,
+                    "taxAmount": "0.00"
+                  }
+                ],
+                "taxTotal": null
+              },
+              "giftWrap": null,
+              "lineInstructions": null,
+              "orderDateDtls": null,
+              "itemDeliveryDtls": {
+                "shipToStoreId": null,
+                "customerShipDtl": null,
+                "deliveryMethod": "SHP"
+              },
+              "lineAdditionalData": []
+            },
+            {
+              "lineItemNo": 2,
+              "capturedLineItemNo": null,
+              "relatedLineItemNo": null,
+              "itemId": "0027177054",
+              "commerceItemId": "ci43560848",
+              "reservationId": "ci43560848",
+              "itemDescription": null,
+              "itemStatus": null,
+              "isCustomized": null,
+              "quantity": 1,
+              "lineType": null,
+              "productClass": "GOOD",
+              "productURL": "sit.aezone.com/intl/en/p/0115_4292_896",
+              "uom": "EACH",
+              "itemTotal": null,
+              "unitSellPrice": "49.95",
+              "unitRegularPrice": "49.95",
+              "overriddenPrice": null,
+              "overriddenPriceReason": null,
+              "shipLocationId": null,
+              "lineCharges": null,
+              "linePromos": {
+                "promo": [
+                  {
+                    "promotionType": "ITEM_PROMOTION",
+                    "currencyCode": null,
+                    "unitPromoAmount": "2.50",
+                    "promoAmount": null,
+                    "promotionName": "Different category and BOGO...",
+                    "promoComponentDetailId": null,
+                    "promoComponentId": null,
+                    "promoCode": null
+                  }
+                ],
+                "promoTotal": null
+              },
+              "lineTaxes": {
+                "tax": [
+                  {
+                    "taxCategory": "Merchandise_Tax",
+                    "taxName": "Tax",
+                    "taxPercentage": null,
+                    "taxAmount": "0.00"
+                  }
+                ],
+                "taxTotal": null
+              },
+              "giftWrap": null,
+              "lineInstructions": null,
+              "orderDateDtls": null,
+              "itemDeliveryDtls": {
+                "shipToStoreId": null,
+                "customerShipDtl": null,
+                "deliveryMethod": "SHP"
+              },
+              "lineAdditionalData": []
+            },
+            {
+              "lineItemNo": 3,
+              "capturedLineItemNo": null,
+              "relatedLineItemNo": null,
+              "itemId": "0027557313",
+              "commerceItemId": "ci43560850",
+              "reservationId": "ci43560850",
+              "itemDescription": null,
+              "itemStatus": null,
+              "isCustomized": null,
+              "quantity": 1,
+              "lineType": null,
+              "productClass": "GOOD",
+              "productURL": "sit.aezone.com/intl/en/p/0112_4316_936",
+              "uom": "EACH",
+              "itemTotal": null,
+              "unitSellPrice": "49.95",
+              "unitRegularPrice": "49.95",
+              "overriddenPrice": null,
+              "overriddenPriceReason": null,
+              "shipLocationId": null,
+              "lineCharges": null,
+              "linePromos": null,
+              "lineTaxes": {
+                "tax": [
+                  {
+                    "taxCategory": "Merchandise_Tax",
+                    "taxName": "Tax",
+                    "taxPercentage": null,
+                    "taxAmount": "0.00"
+                  }
+                ],
+                "taxTotal": null
+              },
+              "giftWrap": null,
+              "lineInstructions": null,
+              "orderDateDtls": null,
+              "itemDeliveryDtls": {
+                "shipToStoreId": null,
+                "customerShipDtl": null,
+                "deliveryMethod": "SHP"
+              },
+              "lineAdditionalData": []
+            },
+            {
+              "lineItemNo": 4,
+              "capturedLineItemNo": null,
+              "relatedLineItemNo": null,
+              "itemId": "0027557313",
+              "commerceItemId": "ci43560852",
+              "reservationId": "ci43560852",
+              "itemDescription": null,
+              "itemStatus": null,
+              "isCustomized": null,
+              "quantity": 1,
+              "lineType": null,
+              "productClass": "GOOD",
+              "productURL": "sit.aezone.com/intl/en/p/0112_4316_936",
+              "uom": "EACH",
+              "itemTotal": null,
+              "unitSellPrice": "49.95",
+              "unitRegularPrice": "49.95",
+              "overriddenPrice": null,
+              "overriddenPriceReason": null,
+              "shipLocationId": null,
+              "lineCharges": null,
+              "linePromos": {
+                "promo": [
+                  {
+                    "promotionType": "ITEM_PROMOTION",
+                    "currencyCode": null,
+                    "unitPromoAmount": "2.50",
+                    "promoAmount": null,
+                    "promotionName": "Different category and BOGO...",
+                    "promoComponentDetailId": null,
+                    "promoComponentId": null,
+                    "promoCode": null
+                  }
+                ],
+                "promoTotal": null
+              },
+              "lineTaxes": {
+                "tax": [
+                  {
+                    "taxCategory": "Merchandise_Tax",
+                    "taxName": "Tax",
+                    "taxPercentage": null,
+                    "taxAmount": "0.00"
+                  }
+                ],
+                "taxTotal": null
+              },
+              "giftWrap": null,
+              "lineInstructions": null,
+              "orderDateDtls": null,
+              "itemDeliveryDtls": {
+                "shipToStoreId": null,
+                "customerShipDtl": null,
+                "deliveryMethod": "SHP"
+              },
+              "lineAdditionalData": []
+            },
+            {
+              "lineItemNo": 5,
+              "capturedLineItemNo": null,
+              "relatedLineItemNo": null,
+              "itemId": "0027557313",
+              "commerceItemId": "ci43560853",
+              "reservationId": "ci43560853",
+              "itemDescription": null,
+              "itemStatus": null,
+              "isCustomized": null,
+              "quantity": 1,
+              "lineType": null,
+              "productClass": "GOOD",
+              "productURL": "sit.aezone.com/intl/en/p/0112_4316_936",
+              "uom": "EACH",
+              "itemTotal": null,
+              "unitSellPrice": "49.95",
+              "unitRegularPrice": "49.95",
+              "overriddenPrice": null,
+              "overriddenPriceReason": null,
+              "shipLocationId": null,
+              "lineCharges": null,
+              "linePromos": {
+                "promo": [
+                  {
+                    "promotionType": "ITEM_PROMOTION",
+                    "currencyCode": null,
+                    "unitPromoAmount": "2.50",
+                    "promoAmount": null,
+                    "promotionName": "Different category and BOGO...",
+                    "promoComponentDetailId": null,
+                    "promoComponentId": null,
+                    "promoCode": null
+                  }
+                ],
+                "promoTotal": null
+              },
+              "lineTaxes": {
+                "tax": [
+                  {
+                    "taxCategory": "Merchandise_Tax",
+                    "taxName": "Tax",
+                    "taxPercentage": null,
+                    "taxAmount": "0.00"
+                  }
+                ],
+                "taxTotal": null
+              },
+              "giftWrap": null,
+              "lineInstructions": null,
+              "orderDateDtls": null,
+              "itemDeliveryDtls": {
+                "shipToStoreId": null,
+                "customerShipDtl": null,
+                "deliveryMethod": "SHP"
+              },
+              "lineAdditionalData": []
+            }
+          ],
+          "lineCollectionSize": 5
+        },
+        "paymentMethods": {
+          "paymentMethod": [
+            {
+              "seqNo": 0,
+              "paymentType": "CREDIT",
+              "chargeType": "AUTHORIZATION",
+              "currencyCode": null,
+              "amount": null,
+              "alternateCurrencyCode": null,
+              "alternateAmount": null,
+              "paymentGroupId": "pg42390997",
+              "settlementOrgCode": null,
+              "creditDebitTender": {
+                "maskedAccountNumber": "401200******7777",
+                "cardToken": "1508372185067777",
+                "reportingToken": null,
+                "cardType": "VISA",
+                "entryMethod": null,
+                "unlimitedCharges": "N",
+                "creditCardExpDate": "01/2020",
+                "maxChargeLimit": "239.75",
+                "authorizationDtls": [
+                  {
+                    "authCode": "OK311C",
+                    "authAVS": "Y",
+                    "authorizationDateTime": null,
+                    "authorizationExpirationDate": "2019-10-17T23:33:43",
+                    "authorizationMethod": null,
+                    "authorizationID": "OK311C",
+                    "processedAmount": "239.75",
+                    "transactionInfo": "00^463345^463345 ^OK311C^W019261739556585G206^0012^59^2001^fxresp-i^0^0^*TrnTime-233257^*CvvResp-m^*TrnAmt-23975^*AvsResp-y^*TableVI-VICRC_"
+                  }
+                ],
+                "personalIdCountry": null,
+                "isCardOnFile":false,
+                "personalIdState": null,
+                "personalIdExpirationDate": null,
+                "prepaidBalance": null,
+                "accountApr": null,
+                "accountAprType": null,
+                "promotionApr": null,
+                "promotionAprType": null,
+                "promotionDescription": null,
+                "promotionDuration": null,
+                "settlementData": null,
+                "signatureData": [],
+                "additionalSecurityInfo": null,
+                "svcno": null
+              },
+              "paypalTender": null,
+              "checkTender": null,
+              "couponTender": null,
+              "giftCardTender": null,
+              "giftCertTender": null,
+              "purchaseOrdTender": null,
+              "travelCheckTender": null,
+              "storeCreditTender": null,
+              "digitalWalletTender": null,
+              "custBillDtls": {
+                "customerDtl": [
+                  {
+                    "customerId": null,
+                    "profileId": null,
+                    "loyaltyId": null,
+                    "loyaltyPts": null,
+                    "customerType": null,
+                    "customerInfo": {
+                      "firstName": "Jhon",
+                      "lastName": "SmithLongggName",
+                      "birthDay": null,
+                      "birthMonth": null,
+                      "birthYear": null,
+                      "birthDate": null,
+                      "gender": null
+                    },
+                    "emails": null,
+                    "phones": null,
+                    "addresses": {
+                      "address": [
+                        {
+                          "addressType": null,
+                          "address1": "Some Street",
+                          "address2": "apt. 1",
+                          "city": "Bangalore",
+                          "county": null,
+                          "stateCode": null,
+                          "stateName": "KA",
+                          "countryCode": "IN",
+                          "countryName": null,
+                          "postalCode": "560085",
+                          "zipOnly": null
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "shipments": null
+      },
+      "additionalData": [],
+      "action": null
+    }
+  ],
+  "collectionSize": 1
+}

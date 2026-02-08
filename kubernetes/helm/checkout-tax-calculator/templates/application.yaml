@@ -1,0 +1,44 @@
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  name: {{ include "fullname" . }}
+  labels:
+    {{- include "labels" . | nindent 4 }}
+spec:
+  descriptor:
+    type: checkout-tax-calculator
+    version: {{ include "image-fullname" .}}
+    description: |-
+      checkout-tax-calculator
+    maintainers:
+    - name: DO
+      url: https://wiki.ae.com/display/DO/Migrating+PCF+Microservice+to+GKE
+    links:
+    - description: 'DO'
+      url: https://wiki.ae.com/display/DO/Migrating+PCF+Microservice+to+GKE
+    notes: |-
+      # checkout-tax-calculator
+
+      Example note
+      ```
+  info:
+  - name: URL
+    value: http://{{ include "fullname" . }}.{{ .Values.ingress.domain }}
+  - name: Application Namespace
+    value: {{ .Release.Namespace }}
+  selector:
+    matchLabels:
+      {{- include "selectorLabels" . | nindent 6 }}
+  componentKinds:
+  - group: v1
+    kind: ConfigMap
+  - group: v1
+    kind: ServiceAccount
+  - group: apps/v1
+    kind: Deployment
+  - group: networking.k8s.io/v1beta1
+    kind: Ingress
+  - group: autoscaling/v2beta1
+    kind: HorizontalPodAutoscaler
+  - group: v1
+    kind: Service

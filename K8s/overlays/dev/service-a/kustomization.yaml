@@ -1,0 +1,5 @@
+resources:
+  - ../../../base/service-a
+
+patchesStrategicMerge:
+  - deployment-patch.yaml

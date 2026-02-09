@@ -109,13 +109,11 @@ pipeline {
   post {
     success {
       echo "✅ CI pipeline completed successfully"
-      slackSend channel: '#ci-cd',
-                message: "✅ ${APP_NAME} build #${BUILD_NUMBER} SUCCESS"
+     
     }
     failure {
       echo "❌ CI pipeline failed"
-      slackSend channel: '#ci-cd',
-                message: "❌ ${APP_NAME} build #${BUILD_NUMBER} FAILED"
+    
     }
   }
 }
